@@ -4,14 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SnackVotingComponent } from './snack-voting/snack-voting.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SnackVotingComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

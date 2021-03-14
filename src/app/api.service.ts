@@ -24,10 +24,4 @@ export class ApiService {
 
     return this._http.get(this.url + '/snacks', {headers: header});
   }
-
-  readData() {
-    this.getData().subscribe((res) => {
-      console.log(res);
-    });
-  }
 }
