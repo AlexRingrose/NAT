@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,700);
+
+/* Imported the starter style sheet to avoid some duplication */
+@import './assets/styles/styles.css';
+
+.hdg_light_font{
+    font-weight: lighter;
+}
+
+.top-vr_x5 {
+    margin-top: 20px;
+}

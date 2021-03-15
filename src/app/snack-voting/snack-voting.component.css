@@ -1,0 +1,83 @@
+.grid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    margin-bottom: 50px;
+}
+
+@media (min-width: 801px){
+    .grid-col-1{
+        flex-basis: 55%;
+        max-width: 55%;
+    }
+    .grid-col-2{
+        flex-basis: 45%;
+        max-width: 45%;
+    }
+}
+
+.seperator{
+    width:250px;
+}
+
+.tableStyle th{
+    padding:15px;
+}
+
+.numCircle{
+    background: #ffffff;
+    text-align: center;
+    border-radius: 50%;
+    width: 1.1em;
+    height: 1.1em;
+    padding: 0.25em;
+    
+}
+
+.img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tableStyle{
+    width:100%;
+}
+
+.tableStyle tbody{
+    color: #706e70;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.tableStyle tr th:nth-child(3){
+    text-align: right;
+}
+
+.tableStyle tbody tr th:nth-child(2){
+    text-align: left;
+}
+
+/* Set alternation for the rows */
+.tableStyle tbody tr th{
+    background-color: #e1e1e1;
+}
+.tableStyle tbody tr:nth-child(odd) th{
+    background-color: #d6d6d6 ;
+}
+
+/* Override alternation for the first column */
+.tableStyle tbody tr th:nth-child(1){
+    background-color: #cfcfcf;
+}
+.tableStyle tbody tr:nth-child(odd) th:nth-child(1){
+    background-color: #c5c5c5  ;
+}
+
+.tableHeader{
+    background-color: #3a8ca1;
+}
+
+.tableHeader h3{
+    text-align: left;
+}

@@ -1,4 +1,40 @@
-<p>
-  snack-voting works!
-</p>
+<div class='constrainer'>
+  <div class="u-vr_x6">
+    <h3 class='hdg hdg_2 mix-hdg_dark u-vr_x5 top-vr_x5'>Snack Voting</h3>
+    <h4 class='hdg hdg_4 mix-hdg_dark hdg_light_font u-vr_x4'>Vote on the snacks you want to see in this month's rotation</h4>
+    <hr class='seperator'>
+    <h5 class='hdg hdg_5 mix-hdg_dark hdg_light_font'>{{votes}} Votes Remaining</h5>
+  </div>
 
+  <div class='grid'>
+    <div >
+      <table class='grid-col-1 tableStyle'>        
+        <thead >
+          <tr>
+            <th  colspan="2" class='tableHeader'>
+              <h3 class='hdg hdg_3 hdg_light_font'>
+                Available Items
+                </h3>
+            </th>
+            <th class='tableHeader'>
+              <div class='numCircle'>
+                {{snackCount}}
+              </div>
+              
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor='let snack of snackArray'>
+            <th >
+              <img class='img' src='../assets/media/images/plus.svg' alt='Add button' width='15px' height='15px'>
+            </th>
+            <th>{{snack.product}}</th>
+            <th >{{snack.votes}}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class='grid-col-2'></div>
+  </div>
+</div>
