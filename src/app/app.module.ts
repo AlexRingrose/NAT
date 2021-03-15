@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {NgxLocalStorageModule} from 'ngx-localstorage';
 
 import { AppComponent } from './app.component';
 
@@ -13,6 +14,7 @@ import { SnackVotingComponent } from './snack-voting/snack-voting.component';
   ],
   imports: [
     BrowserModule,
+    NgxLocalStorageModule.forRoot(),
     HttpClientModule,
   ],
   providers: [],

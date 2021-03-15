@@ -26,7 +26,7 @@
       </thead>
       <tbody>
         <tr  *ngFor='let snack of snackArray'>
-          <th >
+          <th (click)="vote(snack)">
             <img class='img' src='../assets/media/images/plus.svg' alt='Add button' width='15px' height='15px'>
           </th>
           <th>{{snack.brand + ' ' + snack.product}}</th>
@@ -44,7 +44,7 @@
             </h3>
           </th>
           <th style="width: 30px">
-              <div class='numCircle darkCircle'>{{selectedCount}}</div>
+              <div class='numCircle darkCircle'>{{selectedSnacks.length}}</div>
           </th>
         </tr>
       </thead>
