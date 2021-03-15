@@ -25,15 +25,24 @@ export class SnackVotingComponent implements OnInit {
 
     this._api.getData().subscribe(res => {
       this.snackArray = res;
+      // Sort votes in descending vote count
+      this.snackArray = this.snackArray.sort((a, b) => b.votes - a.votes);
+
       this.snackCount = Object.keys(this.snackArray).length;
       console.log(this.snackArray);
     });
   }
 
   vote(snack) {
-    console.log(snack);
     if (this.selectedSnacks.length < 3 && this.votes > 0) {
       this.selectedSnacks.push(snack);
+
+      // Sort the selected list alphanumerically by product name.
+      // The list appends the brand name infront of the product name.
+      // Not sure if this is correct or I should have sorted by the brandname.
+      const alphaSort = (a, b) => a.product.localeCompare(b.product, 'en', { numeric: true});
+      this.selectedSnacks.sort(alphaSort);
+
       this.votes--;
       this._sto.setVotes(this.votes);
     }
