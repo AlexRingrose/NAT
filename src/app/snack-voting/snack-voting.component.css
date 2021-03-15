@@ -1,3 +1,5 @@
+
+/* GRID STYLES */
 .grid{
     display: flex;
     flex-direction: row;
@@ -5,23 +7,48 @@
     margin-bottom: 50px;
 }
 
+@media (max-width: 800px){
+    .grid-col-1{
+        margin-left:20px;
+    }
+    .grid-col-2{
+        margin-left:20px;
+    }
+}
+
+
 @media (min-width: 801px){
     .grid-col-1{
         flex-basis: 55%;
         max-width: 55%;
     }
     .grid-col-2{
-        flex-basis: 45%;
-        max-width: 45%;
+        margin-left:20px;
+        flex-basis: 40%;
+        max-width: 40%;
     }
+}
+
+/* SELECTION TABLE STYLES */
+.selTableStyle th{
+    color: #706e70;
+    padding:15px;
+}
+
+.selTableStyle tr th:nth-child(1){
+    text-align: left;
+}
+
+.selTableStyle tr th:nth-child(2){
+    text-align: right;
+}
+
+.selTableStyle thead{
+    border-bottom: 1px #706e70 solid;
 }
 
 .seperator{
     width:250px;
-}
-
-.tableStyle th{
-    padding:15px;
 }
 
 .numCircle{
@@ -31,13 +58,20 @@
     width: 1.1em;
     height: 1.1em;
     padding: 0.25em;
-    
 }
 
-.img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.darkCircle{
+    background: #3a8ca1;
+    color: #ffffff;
+}
+
+
+
+
+/* ITEM TABLE STYLES */
+
+.tableStyle th{
+    padding:15px;
 }
 
 .tableStyle{
@@ -80,4 +114,10 @@
 
 .tableHeader h3{
     text-align: left;
+}
+
+.img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

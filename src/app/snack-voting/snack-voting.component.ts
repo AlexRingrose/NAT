@@ -13,6 +13,8 @@ export class SnackVotingComponent implements OnInit {
   private votes = 3;
   private snackArray;
   private snackCount = 0;
+  private selectedSnacks;
+  private selectedCount = 0;
 
   ngOnInit() {
     this._api.getData().subscribe(res => {

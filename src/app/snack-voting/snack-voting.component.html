@@ -7,34 +7,54 @@
   </div>
 
   <div class='grid'>
-    <div >
-      <table class='grid-col-1 tableStyle'>        
-        <thead >
-          <tr>
-            <th  colspan="2" class='tableHeader'>
-              <h3 class='hdg hdg_3 hdg_light_font'>
-                Available Items
-                </h3>
-            </th>
-            <th class='tableHeader'>
-              <div class='numCircle'>
-                {{snackCount}}
-              </div>
-              
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr  *ngFor='let snack of snackArray'>
-            <th >
-              <img class='img' src='../assets/media/images/plus.svg' alt='Add button' width='15px' height='15px'>
-            </th>
-            <th>{{snack.product}}</th>
-            <th >{{snack.votes}}</th>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class='grid-col-2'></div>
+
+    <table class='grid-col-1 tableStyle'>        
+      <thead >
+        <tr>
+          <th  colspan="2" class='tableHeader'>
+            <h3 class='hdg hdg_3 hdg_light_font'>
+              Available Items
+              </h3>
+          </th>
+          <th class='tableHeader'>
+            <div class='numCircle'>
+              {{snackCount}}
+            </div>
+            
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor='let snack of snackArray'>
+          <th >
+            <img class='img' src='../assets/media/images/plus.svg' alt='Add button' width='15px' height='15px'>
+          </th>
+          <th>{{snack.brand + ' ' + snack.product}}</th>
+          <th >{{snack.votes}}</th>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class='grid-col-2 selTableStyle'>
+      <thead>
+        <tr>
+          <th>
+            <h3 class='hdg hdg_3 mix-hdg_dark'>
+              Selection
+            </h3>
+          </th>
+          <th style="width: 30px">
+              <div class='numCircle darkCircle'>{{selectedCount}}</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody *ngIf='selectedSnacks'>
+        <tr *ngFor='let snack of selectedSnacks'>
+          <th>{{snack.brand + ' ' + snack.product}}</th>
+          <th >{{snack.votes}}</th>
+        </tr>
+      </tbody>
+    </table>
+
   </div>
 </div>
