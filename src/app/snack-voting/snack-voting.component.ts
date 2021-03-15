@@ -34,7 +34,9 @@ export class SnackVotingComponent implements OnInit {
   }
 
   vote(snack) {
-    if (this.selectedSnacks.length < 3 && this.votes > 0) {
+    if ( ! ( this.selectedSnacks.length < 3 && this.votes > 0)) {
+      alert('You have voted for three snacks this month. Please wait until next month.');
+    } else if (this.isUniqueVote(snack)) {
       this.selectedSnacks.push(snack);
 
       // Sort the selected list alphanumerically by product name.
@@ -45,7 +47,17 @@ export class SnackVotingComponent implements OnInit {
 
       this.votes--;
       this._sto.setVotes(this.votes);
+      this._api.setData(snack.id);
+    } else {
+      alert('You have already voted for this snack');
     }
+  }
+
+  isUniqueVote(vote) {
+    if (this.selectedSnacks.some( snack => snack.id === vote.id)) {
+      return false;
+    }
+    return true;
   }
 
 }
